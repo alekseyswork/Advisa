@@ -1,12 +1,13 @@
+import {ForecastService, IForeCast} from '../../../services/forecast.service';
 import { Component, OnInit } from '@angular/core';
-import { IForeCast, ForecastService } from 'src/app/services/forecast.service';
+
 
 @Component({
-  selector: 'app-manageforecast',
-  templateUrl: './manageforecast.component.html',
-  styleUrls: ['./manageforecast.component.css']
+  selector: 'app-create-updateforecast',
+  templateUrl: './create-updateforecast.component.html',
+  styleUrls: ['./create-updateforecast.component.css']
 })
-export class ManageforecastComponent implements OnInit {
+export class CreateUpdateforecastComponent implements OnInit {
   forecast: IForeCast;
   Forecasts: Array<IForeCast>;
   constructor(private service: ForecastService) {
