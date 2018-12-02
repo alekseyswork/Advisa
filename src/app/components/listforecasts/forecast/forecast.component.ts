@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IForeCast } from 'src/app/services/forecast.service';
+import { IForeCast } from '../services/forecast.service';
 
 @Component({
   selector: 'app-forecast',

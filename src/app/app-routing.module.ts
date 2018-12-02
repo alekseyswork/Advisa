@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ListforecastsComponent } from './components/listforecasts/listforecasts.component';
-import { ManageforecastComponent } from './components/manageforecast/manageforecast.component';
+import { AuthenticationComponent } from './components/auth/authentication.component';
+import { AUTH_ROUTES } from './components/auth/auth.routes';
+import { CreateUpdateforecastComponent } from './components/listforecasts/create-updateforecast/create-updateforecast.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: ListforecastsComponent
+    component: ListforecastsComponent, pathMatch: 'full'
   },
   {
-    path: 'manage',
-    component: ManageforecastComponent
-  }
+    path: 'CreateForecast',
+    component: CreateUpdateforecastComponent
+  },
+  {
+    path: 'UpdateForecast',
+    component: CreateUpdateforecastComponent
+  },
+  { path: 'auth', component: AuthenticationComponent, children: AUTH_ROUTES }
 
 ];
 

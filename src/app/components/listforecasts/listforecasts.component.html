@@ -1,7 +1,4 @@
-<p>
-  listforecasts works!
-</p>
-
+<button type="button" class="btn btn-success" (click)="CreateForecast()">Create new Forecast</button>
 <div *ngFor="let Forecast of Forecasts">
     <app-forecast [forecast]="Forecast"></app-forecast>
 </div>
