@@ -9,6 +9,8 @@
         "start": "nodemon ./dist/server.js",
         "prod": "npm run build && npm run start",
         "watch": "gulp watch",
+        "alexdev": "nodemon -e ts -w ./lib -x npm run dev",
+        "watch:serve": "ts-node --inspect lib/server.ts",
         "startDev": "concurrently --kill-others \"npm run watch\" \"npm run dev\"",
         "serve": "nodemon dist/server.js"
     },
@@ -41,6 +43,7 @@
         "mocha": "^5.2.0",
         "mocha-typescript": "^1.1.4",
         "nodemon": "^1.18.4",
+        "ts-node": "^7.0.1",
         "typescript": "^2.3.4"
     }
 }
