@@ -1,6 +1,6 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { AccountRoutes } from "./routes/crmRoutes";
+import { AccountRoutes } from "./routes/AccountRoutes";
 import * as mongoose from "mongoose";
 import { Config } from './configuration/Config';
 
