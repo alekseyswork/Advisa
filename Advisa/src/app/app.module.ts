@@ -13,6 +13,7 @@ import {SignupComponent} from './components/auth/signup.component';
 import {SigninComponent} from './components/auth/signin.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ForecastService} from './components/listforecasts/services/forecast.service';
+import { UserService } from './components/auth/user.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import {ForecastService} from './components/listforecasts/services/forecast.serv
     BrowserModule, AppRoutingModule, ReactiveFormsModule, HttpModule
 
   ],
-  providers: [ForecastService, {provide: 'BASE_URL', useFactory: getBaseUrl}],
+  providers: [ForecastService, UserService, {provide: 'BASE_URL', useFactory: getBaseUrl}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

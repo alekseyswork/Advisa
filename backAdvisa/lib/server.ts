@@ -26,7 +26,7 @@ class Server {
     private runServer(): void {
         this.port = Config.Port;
         app.set('port', this.port);
-        console.log('Run on http://localhost:{port}}/');
+        console.log(`Run on http://localhost:${this.port}/`);
         this.createServer();
     }
     private createServer() {

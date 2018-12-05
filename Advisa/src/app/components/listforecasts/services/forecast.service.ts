@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, Subscriber } from 'rxjs';
 
 const URL = 'sfs';
 

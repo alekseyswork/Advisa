@@ -7,10 +7,16 @@ export class AccountRoutes {
     
     public routes(app): void {   
         
-        app.route('/')
+        app.route('/user')
         .get((req: Request, res: Response) => {            
             res.status(200).send({
                 message: 'GET request df successfulll!!!!'
+            })
+        })
+        .post((req: Request, res: Response)=> {            
+            res.status(200).send({
+                message: req.body+'GET request df susdfccessfulll 223 df!!!!',
+
             })
         })
        
