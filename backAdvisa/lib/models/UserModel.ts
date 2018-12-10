@@ -1,8 +1,10 @@
 import * as mongoose from 'mongoose';
+import { IUser } from 'classes/IUser';
 
 const Schema = mongoose.Schema;
+interface IUserModel extends IUser, mongoose.Document { };
 
-export const AccountModel = new Schema({
+const UserModel = new Schema({
     name: {
         type: String,
         required: 'Enter a name'
@@ -19,3 +21,6 @@ export const AccountModel = new Schema({
         default: Date.now
     }
 });
+
+
+export var User = mongoose.model<IUserModel>("User", UserModel);

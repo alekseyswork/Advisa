@@ -1,6 +1,6 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import {AccountRoutes} from "./routes/AccountRoutes";
+import {UserRoutes} from "./routes/UserController";
 import * as mongoose from "mongoose";
 import {Config} from './configuration/Config';
 import { Router } from 'express';
@@ -9,7 +9,7 @@ var cookieParser = require('cookie-parser');
 class App {
 
     public app : express.Application;
-    public accountRoute : AccountRoutes ;
+    public accountRoute : UserRoutes ;
     public mongoUrl : string = Config.ConnectionStringDB;
     public api:Router;
 
@@ -18,7 +18,7 @@ class App {
         this.api =express.Router();
         
         this.config();
-        this.accountRoute= new AccountRoutes(this.api);
+        this.accountRoute= new UserRoutes(this.api);
         this.app.use(this.api);
         this.mongoSetup();
     }
