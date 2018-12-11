@@ -2,3 +2,6 @@
 "startDev": "concurrently --kill-others \"npm run watch\" \"npm run dev\"",
 "serve": "nodemon dist/server.js"
         "watch:serve": "ts-node --inspect lib/server.ts"
+
+netstat -ano | findstr :4200
+taskkill /PID 10104 /F

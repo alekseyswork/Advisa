@@ -4,7 +4,6 @@ import { Request, Response, Router } from 'express';
 export class UserController {
     constructor() {
 
-
     }
     public addNewUser(req: Request, res: Response) {
         let user = new User(req.body);
