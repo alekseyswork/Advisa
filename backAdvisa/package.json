@@ -10,10 +10,7 @@
         "prod": "npm run build && npm run start",
         "watch": "gulp watch",
         "alexdev": "nodemon -e ts -w ./lib -x npm run dev",
-        "alexdevDebug": "nodemon --inspect -e ts -w ./lib -x",
-        "watch:serve": "ts-node --inspect lib/server.ts",
-        "startDev": "concurrently --kill-others \"npm run watch\" \"npm run dev\"",
-        "serve": "nodemon dist/server.js"
+        "alexdevDebug": "nodemon --inspect -e ts -w ./lib -x"
     },
     "author": "",
     "license": "ISC",
