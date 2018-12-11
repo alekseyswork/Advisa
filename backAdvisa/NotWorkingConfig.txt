@@ -1,0 +1,4 @@
+
+"startDev": "concurrently --kill-others \"npm run watch\" \"npm run dev\"",
+"serve": "nodemon dist/server.js"
+        "watch:serve": "ts-node --inspect lib/server.ts"

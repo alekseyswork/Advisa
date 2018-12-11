@@ -11,7 +11,8 @@ export class SignupComponent implements OnInit {
  */
   constructor(private authService: UserService) {}
   onSubmit() {
-    const user = new User(this.myForm.value.email, this.myForm.value.password, this.myForm.value.firstName, this.myForm.value.lastName);
+    const user = new User(this.myForm.value.email, this.myForm.value.password,
+       this.myForm.value.name);
     this
       .authService
       .signup(user)
@@ -23,8 +24,7 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, Validators.required),
+      name: new FormControl(null, Validators.required),
       email: new FormControl(null, [
         Validators.required, Validators.pattern('[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:' +
             '[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?')
