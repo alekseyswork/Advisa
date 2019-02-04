@@ -1,14 +1,12 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
-<app-navbar></app-navbar>
-
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-      <main>
-        <router-outlet></router-outlet>
-        some test
-      </main>
+    <div class="col-3 px-1 bg-dark position-fixed h-100" id="sticky-sidebar">
+      <app-navbar></app-navbar>
+    </div>
+    <div class="col offset-3 h-100">
+      <router-outlet></router-outlet>
+      <p>some test</p>
+
     </div>
   </div>
 </div>
