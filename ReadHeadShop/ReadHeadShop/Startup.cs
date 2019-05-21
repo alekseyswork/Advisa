@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
@@ -44,7 +43,17 @@ namespace ReadHeadShop
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                OnPrepareResponse = (context) =>
+                {
+                    // Disable caching for all static files.
+                    context.Context.Response.Headers["Cache-Control"] =
+                    Configuration["StaticFiles:Headers:Cache-Control"];
+                    context.Context.Response.Headers["Pragma"] = Configuration["StaticFiles:Headers:Pragma"];
+                    context.Context.Response.Headers["Expires"] = Configuration["StaticFiles:Headers:Expires"];
+                }
+            });
             app.UseSpaStaticFiles();
 
             app.UseMvc(routes =>

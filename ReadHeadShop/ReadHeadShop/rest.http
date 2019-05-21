@@ -1,0 +1,1 @@
+GET https://localhost:44371/api/Category/Latest/5 HTTP/1.1
