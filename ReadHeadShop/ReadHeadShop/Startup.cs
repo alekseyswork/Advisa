@@ -42,7 +42,8 @@ namespace ReadHeadShop
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+
+			app.UseHttpsRedirection();
             app.UseStaticFiles(new StaticFileOptions()
             {
                 OnPrepareResponse = (context) =>
